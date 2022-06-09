@@ -18,24 +18,14 @@ class ppay(QWidget):
         self.le.move(50, 125)
         self.le.resize(200, 50)
 
+        for values in list(my_study.values()):  # view가 아닌 list로 바꾸기
+            if value == '1시간':
+                
+
         self.setWindowTitle('최종 결제')
         self.setWindowIcon(QIcon('작심.jpg'))
         self.setGeometry(400, 400, 340, 400)
 
-        if my_study["시간"] == '1시간':
-            mm = 1000
-        elif my_study["시간"] == '2시간':
-            mm = 2000
-        elif my_study["시간"] == '3시간':
-            mm = 3000
-        elif my_study["시간"] == '4시간':
-            mm = 4000
-        elif my_study["시간"] == '5시간':
-            mm = 5000
-        elif my_study["시간"] == '6시간':
-            mm = 6000
-
-        self.le.setText(mm)
 
     def paintEvent(self, e):
         qp = QPainter()
@@ -44,11 +34,11 @@ class ppay(QWidget):
         qp.end()
 
     def draw_rect(self, qp):
-        qp.setBrush(Qt.darkGray)
+        qp.setBrush(RGB(20,189,227))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(0,0,340,400)
 
-        qp.setBrush(Qt.gray)
+        qp.setBrush(RGB(247,174,99))
         qp.setPen(QPen(Qt.black,3))
         qp.drawRect(40,20,260,320)
 
@@ -109,11 +99,11 @@ class lockerroom(QWidget):
         qp.end()
 
     def draw_rect(self, qp):
-        qp.setBrush(Qt.darkGray)
+        qp.setBrush(RGB(20,189,227))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(0,0,340,400)
 
-        qp.setBrush(Qt.gray)
+        qp.setBrush(RGB(247,174,99))
         qp.setPen(QPen(Qt.black,3))
         qp.drawRect(40,20,260,320)
 
@@ -196,11 +186,11 @@ class shoes(QWidget):
         qp.end()
 
     def draw_rect(self, qp):
-        qp.setBrush(Qt.darkGray)
+        qp.setBrush(RGB(20,189,227))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(0, 0, 340, 400)
 
-        qp.setBrush(Qt.gray)
+        qp.setBrush(RGB(247,174,99))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(40, 20, 260, 320)
 
@@ -283,11 +273,11 @@ class secondwindow(QWidget):
         qp.end()
 
     def draw_rect(self, qp):
-        qp.setBrush(Qt.darkGray)
+        qp.setBrush(RGB(20,189,227))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(0,0,400,600)
 
-        qp.setBrush(Qt.gray)
+        qp.setBrush(RGB(247,174,99))
         qp.setPen(QPen(Qt.black,3))
         qp.drawRect(40,20,320,550)
 
@@ -326,7 +316,7 @@ class firstwindow(QMainWindow):
         self.sub_window = secondwindow()
         self.sub_window2 = lockerroom()
         self.sub_window3 = shoes()
-
+        self.sub_window4 = ppay()
 
         btn = QPushButton('사물함',self)
         btn.move(40,550)
@@ -346,7 +336,7 @@ class firstwindow(QMainWindow):
         btn = QPushButton('결제하기', self)
         btn.move(400, 400)
         btn.resize(160, 120)
-        btn.clicked.connect(self.pay)
+        btn.clicked.connect(self.sub_window4.show)
 
         self.le = QLineEdit(self)
         self.le.move(40, 680)
@@ -480,15 +470,15 @@ class firstwindow(QMainWindow):
         qp.end()
 
     def draw_rect(self, qp):
-        qp.setBrush(RGB(153,51,000))
+        qp.setBrush(RGB(20,189,227))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(0,0,600,800)
 
-        qp.setBrush(Qt.gray)
+        qp.setBrush(RGB(247,174,99))
         qp.setPen(QPen(Qt.black,3))
         qp.drawRect(40,20,230,520)
 
-        qp.setBrush(Qt.gray)
+        qp.setBrush(RGB(247,174,99))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(300,20, 270, 300)
 
@@ -553,7 +543,7 @@ class firstwindow(QMainWindow):
     def show_new_window(self, checked):
         self.secondwindow.show()
         self.hide()
-    def pay(self):
+    def btn_clicked34(self,checked):
         self.ppay.show()
 
 class RGB(QColor):
@@ -586,7 +576,7 @@ class login(QMainWindow):
 
         self.setWindowTitle('심심 스터디')
         self.setWindowIcon(QIcon('작심.jpg'))
-        self.setGeometry(800,200,300,400)
+        self.setGeometry(800,200,300,300)
         self.show()
 
 
@@ -597,7 +587,7 @@ class login(QMainWindow):
         qp.end()
 
     def draw_rect(self, qp):
-        qp.setBrush(RGB(153,51,000))
+        qp.setBrush(RGB(20,189,227))
         qp.setPen(QPen(Qt.black, 3))
         qp.drawRect(0,0,600,700)
 
