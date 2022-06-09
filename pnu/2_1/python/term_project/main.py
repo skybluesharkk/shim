@@ -14,18 +14,10 @@ class secondwindow(QWidget):
 
     def initUI(self):
 
-        self.btn = QPushButton('회원정보 등록', self)
-        self.btn.move(300, 350)
-        self.btn.clicked.connect(self.showDialog)
-
-        self.le = QLineEdit(self)
-        self.le.move(300, 400)
-        self.le.resize(200,50)
-
         btn = QPushButton('선택 완료', self)
         btn.move(80, 490)
         btn.resize(240, 60)
-        btn.clicked.connect(QCoreApplication.instance().quit)
+        btn.clicked.connect(self.btn_clicked)
 
         btn1 = QPushButton('1', self)
         btn1.move(80, 40)
@@ -82,12 +74,9 @@ class secondwindow(QWidget):
 
     def btn_clicked(self):
         print('선택되었습니다')
+        my_study["시간"].append("3시간")
+        print(my_study)
 
-    def showDialog(self):
-        text, ok = QInputDialog.getText(self, 'Input Dialog', '이름을 입력하세요')
-
-        if ok:
-            self.le.setText(str(text)+'님 환영합니다')
 
 class RGB(QColor):
     def hex_format(self):
@@ -164,6 +153,7 @@ class MyApp(QMainWindow):
         btn8.move(170, 120)
         btn8.resize(80, 80)
         btn8.clicked.connect(self.btn_clicked)
+        print(btn8.clicked.connect(self.btn_clicked))
 
         btn9 = QPushButton('9', self)
         btn9.move(170, 200)
@@ -244,8 +234,9 @@ class MyApp(QMainWindow):
         qp.drawRect(300,20, 270, 300)
 
     def btn_clicked(self):
-        print('선택되었습니다')
-
+        print('choose')
+        my_study["좌석"].append("1")
+        print(my_study)
     def show_new_window(self, checked):
         self.secondwindow.show()
 
@@ -254,10 +245,12 @@ class MyApp(QMainWindow):
 
         if ok:
             self.le.setText(str(text)+'님 환영합니다')
-
+            my_study["이름"].append(str(text))
 
 
 if __name__ == '__main__':
+    my_study = {"이름":[],"좌석":[],"시간":[]}
+
     app = QApplication([])
     window = MyApp()
     window.show()
