@@ -1,0 +1,5 @@
+print('|',end="");print('\\',end="");print('_/|')
+print('|q p|   ',end="");print("/}")
+print('( 0 )"""',end="");print('\\')
+print('|"^"`    |')
+print('||_/=',end="");print('\\',end="");print('\\',end="");print('__|')
