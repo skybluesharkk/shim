@@ -7,4 +7,4 @@ for i in range(5):
         b[i]=40
     else:
         pass
-print(int(sum(b,0)/len(b)))
+print(int(sum(b)/len(b)))
