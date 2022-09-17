@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <meta charset="utf-8">
+   <title> 201924504 심영찬 </title>
+</head>
+<body>
+   <form method="get">
+      <fieldset>
+         <legend>Photo Details</legend>
+         <table>
+            <thead>
+               <th></th>
+            </thead>
+            <tbody>
+               <tr>
+                  <td rowspan="1" colspan="3">
+                     <p>
+                        <label>Title</label>
+                        <br>
+                     <input type="text" name="title" size="100px;">
+                     </p>
+                     <p>
+                        <label>Description</label>
+                        <br>
+                        <textarea name="descriptions" id="" cols="80" rows="8"></textarea>
+                     </p>
+                  </td>
+               </tr>
+               <tr style="width: 100%">
+                  <td rowspan="3" colspan="2" style="width: 45%">
+                     <p>
+                        <label>Continent</label>
+                        <br>
+                        <select name="Continent" id="Continent" >
+                           <option>Choose continent</option>
+                           <option value="Africa">Africa</option>
+                           <option value="Asia">Asia</option>
+                           <option value="Europe">Europe</option>
+                           <option value="North America">North America</option>
+                           <option value="South America">South America</option>
+                        </select>
+                     </p>
+                     <p>
+                        <label>Country</label>
+               
+                        <select name="Country" id="Country">
+                           <option>Choose country</option>
+                           <option value="Canada">Canada</option>
+                           <option value="Mexico">Mexico</option>
+                           <option value="Unitied States">Unitied States</option>
+                        </select>
+                     </p>
+                     <p>
+                        <label>City</label>
+                        <input type="text" name="city" list="cities" size="60px">
+                        <datalist id="cities">
+                           <option value="Calgary">Calgary</option>
+                           <option value="Montreal">Montreal</option>
+                           <option value="Toronto">Toronto</option>
+                           <option value="Vancouver">Vancouver</option>
+                        </datalist>
+                     </p>
+                  </td>
+                  <td rowspan="3" colspan="1" style="width: 45%">
+                     <p>
+                        <label>Copyright?</label> <br>
+                        <input type="radio" name="what" value="1">All rights reserved <br>
+                        <input type="radio" name="what" value="2" checked>Creative Commons
+                     </p>
+                     <p>
+                        <label>Creative Commons Types</label> <br>
+                        <input type="checkbox" name="Commons Types" value="Attribution">Attribution <br>
+                        <input type="checkbox" name="Commons Types" value="Noncommercial">Noncommercial <br>
+                        <input type="checkbox" name="Commons Types" value="No Derivative Works">No Derivative Works <br>
+                        <input type="checkbox" name="Commons Types" value="Share Alike">Share Alike
+                     </p>
+                  </td>
+               </tr>
+               <br>
+               <tr style="width: 100%">
+                  <td style="width: 100%">
+                     <p>
+                        <label>I accept the software license</label>
+                        <input type="checkbox" name="accept">
+                     </p>
+                  </td>
+               </tr>
+               <tr style="width: 100%">
+                  <td style="width: 45px"></td>
+                  <td style="width: 45px"></td>
+               </tr>
+            </tbody>
+            <div>gsfdsjflkjjjdjfjfj</div>
+         </table>
+      </fieldset>
+   </form>
+</body>
+</html>
