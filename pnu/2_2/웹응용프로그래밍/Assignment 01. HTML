@@ -9,12 +9,8 @@
       <fieldset>
          <legend>Photo Details</legend>
          <table>
-            <thead>
-               <th></th>
-            </thead>
-            <tbody>
                <tr>
-                  <td rowspan="1" colspan="3">
+                  <td colspan="2">
                      <p>
                         <label>Title</label>
                         <br>
@@ -27,8 +23,8 @@
                      </p>
                   </td>
                </tr>
-               <tr style="width: 100%">
-                  <td rowspan="3" colspan="2" style="width: 45%">
+               <tr>
+                  <td colspan="1">
                      <p>
                         <label>Continent</label>
                         <br>
@@ -43,7 +39,7 @@
                      </p>
                      <p>
                         <label>Country</label>
-               
+                        <br>
                         <select name="Country" id="Country">
                            <option>Choose country</option>
                            <option value="Canada">Canada</option>
@@ -53,6 +49,7 @@
                      </p>
                      <p>
                         <label>City</label>
+                        <br>
                         <input type="text" name="city" list="cities" size="60px">
                         <datalist id="cities">
                            <option value="Calgary">Calgary</option>
@@ -62,7 +59,7 @@
                         </datalist>
                      </p>
                   </td>
-                  <td rowspan="3" colspan="1" style="width: 45%">
+                  <td colspan="1">
                      <p>
                         <label>Copyright?</label> <br>
                         <input type="radio" name="what" value="1">All rights reserved <br>
@@ -78,20 +75,22 @@
                   </td>
                </tr>
                <br>
-               <tr style="width: 100%">
-                  <td style="width: 100%">
+               <tr >
+                  <td colspan="2">
                      <p>
                         <label>I accept the software license</label>
                         <input type="checkbox" name="accept">
                      </p>
                   </td>
                </tr>
-               <tr style="width: 100%">
-                  <td style="width: 45px"></td>
-                  <td style="width: 45px"></td>
+               <tr >
+                  <td colspan="1">
+
+                  </td>
+                  <td colspan="1">
+
+                  </td>
                </tr>
-            </tbody>
-            <div>gsfdsjflkjjjdjfjfj</div>
          </table>
       </fieldset>
    </form>
