@@ -8,8 +8,7 @@ elif (h==0)and(m==0):
 else:
     pass
 totaltime = h*60+m
-#print(h,m)
-#print(totaltime)
+
 totaltime-=45
 if ((int(totaltime/60))!=24):
     print(int(totaltime/60),totaltime%60)
