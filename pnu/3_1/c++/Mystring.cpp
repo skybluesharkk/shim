@@ -10,6 +10,7 @@ class Mystring {
     int memory_capacity;
 
 public:
+    Mystring(char c);
     Mystring(int capacity);
     Mystring(const char* str);
     Mystring(const Mystring& str);
@@ -36,7 +37,15 @@ public:
 
     int compare(const Mystring& str) const;
     bool operator==(Mystring& str);
+
+    char& operator[](const int index);
 };
+Mystring::Mystring(char c) {
+    string_content = new char[1];
+    string_content[0] = c;
+    memory_capacity = 1;
+    string_length = 1;
+}
 Mystring::Mystring(int capacity) {
     string_content = new char[capacity];
     string_length = 0;
@@ -44,9 +53,7 @@ Mystring::Mystring(int capacity) {
 }
 
 Mystring::Mystring(const char *str) {
-    string_length = 0;
-    while (str[string_length++]) { }
-
+    string_length = strlen(str);
     memory_capacity = string_length;
     string_content = new char[string_length];
 
@@ -211,15 +218,12 @@ int Mystring::compare(const Mystring& str) const {
 bool Mystring::operator==(Mystring &str) {
     return !compare(str);
 }
+char& Mystring::operator[](const int index) {return string_content[index];}
+
 int main() {
     Mystring str1("a word");
     Mystring str2("sentence");
     Mystring str3("sentence");
-    if (str1 == str2)
-        std::cout << "str1 와 str2 같다." << std::endl;
-    else
-        std::cout << "st1 와 str2 는 다르다." << std::endl;
-    if (str2 == str3)
-        std::cout << "str2 와 str3 는 같다." << std::endl;
-    else
-        std::cout << "st2 와 str3 는 다르다" << std::endl; }
+str1[3] = 'c';
+str1.println();
+}
