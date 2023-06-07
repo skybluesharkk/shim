@@ -35,6 +35,7 @@ public:
     int find(int find_from, char c) const;
 
     int compare(const Mystring& str) const;
+    bool operator==(Mystring& str);
 };
 Mystring::Mystring(int capacity) {
     string_content = new char[capacity];
@@ -207,8 +208,18 @@ int Mystring::compare(const Mystring& str) const {
         return 1;
     return -1;
 }
-
-int main() {
-    Mystring str1(3);
-
+bool Mystring::operator==(Mystring &str) {
+    return !compare(str);
 }
+int main() {
+    Mystring str1("a word");
+    Mystring str2("sentence");
+    Mystring str3("sentence");
+    if (str1 == str2)
+        std::cout << "str1 와 str2 같다." << std::endl;
+    else
+        std::cout << "st1 와 str2 는 다르다." << std::endl;
+    if (str2 == str3)
+        std::cout << "str2 와 str3 는 같다." << std::endl;
+    else
+        std::cout << "st2 와 str3 는 다르다" << std::endl; }
