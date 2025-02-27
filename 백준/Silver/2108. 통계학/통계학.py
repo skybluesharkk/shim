@@ -1,29 +1,28 @@
 from collections import Counter
-
+import sys
 def _many(_list):
 
     common = Counter(_list).most_common() 
 
-    #print(common)
     k = []
     f=common[0][1]
-    #print(f)
+
     for i in range(len(common)):
         if common[i][1]==f:
             k.append(common[i])
-    #print(f, common[f][0])
-    #print(common)
-    #print(k)
+        else:
+            break
+
     if len(k)==1:
         return k[0][0]
     else:
         return k[1][0]
 
-n = int(input())
+n = int(sys.stdin.readline().strip())
 nums = []
 
 for i in range(n):
-    tmp = int(input())
+    tmp = int(sys.stdin.readline().strip())
     nums.append(tmp)
 nums.sort()
 
